@@ -1,0 +1,32 @@
+.home-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 10px;
+}
+.search-input{
+    padding: 15px ;
+    width: 50%;
+}
+.search-btn{
+    padding: 15px 17px;
+    background-color:rgb(127, 18, 230);
+    color:white;
+    font-weight: 600;
+}
+
+.cart{
+    border: 1px solid gray;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+}
+.cart-info-container{
+    display:flex;
+    justify-content: center;
+}
+.delete-btn{
+    padding:4px 6px;
+    background-color:rgb(226, 144, 144);
+    margin-left:5px;
+}
