@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import Players from "../Players/Players";
 import "./Home.css";
-
+import Swal from 'sweetalert2';
 const Home = () => {
   const [players, setPlayers] = useState([]);
   const [search, setSearch] = useState("");
@@ -23,7 +23,11 @@ const Home = () => {
     const leftPlayer = cart.filter((pd) => pd.idPlayer !== id);
     setCart(leftPlayer);
     toast("wow deleted form cart!");
-    // Swal.fire("Good job!", "You clicked the button!", "success");
+    Swal.fire(
+      'Good job!',
+      'Are You Sure Delete!',
+      'success'
+    )
   };
 
   return (
@@ -42,7 +46,7 @@ const Home = () => {
         </div>
         <div className="right-sidebar">
           <div className="cart">
-            <p>This is players cart</p>
+            <p>This {cart?.length}</p>
               {
               cart?.map(p=>
                 <div className="cart-info-container">

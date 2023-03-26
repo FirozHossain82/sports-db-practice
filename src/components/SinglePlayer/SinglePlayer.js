@@ -10,13 +10,10 @@ const SinglePlayer = ({player, cart, setCart}) => {
             strCutout,
             price: 120,
           };
-
           /* if(cart){
             const newPlayer = [...cart,info];
             setCart(newPlayer);
           } */
-         
-
        if (cart?.length) {
             setCart([...cart, info]);
             return;
@@ -26,9 +23,49 @@ const SinglePlayer = ({player, cart, setCart}) => {
           } 
     }
 
-    const handleBookmark = () =>{
-
-    }
+    const handleBookmark = () => {
+      const info = {
+        strPlayer,
+        idPlayer,
+        strCutout,
+        quanity: 1,
+        bookmark: "true",
+      };
+      // console.log(info);
+      const prevBookmark = localStorage.getItem("bookmark");
+      const oldBokmark = JSON.parse(prevBookmark);
+  
+      if (oldBokmark) {
+        const isExist = oldBokmark.find((p) => p.idPlayer === idPlayer);
+  
+        if (isExist) {
+          isExist.quanity = isExist.quanity + 1;
+          localStorage.setItem("bookmark", JSON.stringify(oldBokmark));
+        } else {
+          localStorage.setItem("bookmark", JSON.stringify([...oldBokmark, info]));
+        }
+      } else {
+        localStorage.setItem("bookmark", JSON.stringify([info]));
+      }
+  
+      // if (oldBokmark) {
+      //   const isExit = oldBokmark.find((p) => p.idPlayer === idPlayer);
+  
+      //   if (isExit) {
+      //     const updatedPrice = parseFloat(isExit.quanity);
+      //     const newUpdatePrice = updatedPrice + 1;
+      //     isExit.quanity = newUpdatePrice;
+      //     localStorage.setItem("bookmark", JSON.stringify(oldBokmark));
+  
+      //     return;
+      //   } else {
+      //     localStorage.setItem("bookmark", JSON.stringify([...oldBokmark, info]));
+      //   }
+      // } else {
+      //   localStorage.setItem("bookmark", JSON.stringify([info]));
+      //   console.log("naiiiiiii");
+      // }
+    };
 
     console.log(player);
     return (

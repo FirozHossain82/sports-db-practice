@@ -6,6 +6,7 @@
 .search-input{
     padding: 15px ;
     width: 50%;
+    margin-bottom: 30px;
 }
 .search-btn{
     padding: 15px 17px;
@@ -27,6 +28,10 @@
 }
 .delete-btn{
     padding:4px 6px;
-    background-color:rgb(226, 144, 144);
+    background-color:rgb(245, 24, 24);
     margin-left:5px;
+}
+.left-sidebar{
+    margin-left: 50px;
+    
 }
